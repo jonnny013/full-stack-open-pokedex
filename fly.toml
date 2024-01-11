@@ -20,9 +20,12 @@ primary_region = "hkg"
   PORT = "3000"
 
 [[services]]
-  http_checks = []
   internal_port = 8080
   processes = ["app"]
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = 3000
 
 
 [http_service]
