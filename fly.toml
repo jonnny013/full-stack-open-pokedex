@@ -45,4 +45,4 @@ primary_region = "hkg"
     grace_period = "3s"
     interval = "15s"
     restart_limit = 0
-    timeout = "3s"
+    timeout = "10s"
