@@ -8,6 +8,7 @@ primary_region = "hkg"
 
 [deploy]
   release_command = "npm run build"
+  strategy = "bluegreen"
 
 [processes]
   app = "node app.js"
@@ -46,3 +47,13 @@ primary_region = "hkg"
     interval = "15s"
     restart_limit = 0
     timeout = "10s"
+
+  [[services.http_checks]]
+    interval = 10000
+    grace_period = "5s"
+    method = "get"
+    path = "/health"
+    protocol = "http"
+    timeout = 2000
+    tls_skip_verify = false
+    [services.http_checks.headers]
