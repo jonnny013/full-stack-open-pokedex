@@ -8,7 +8,7 @@ primary_region = "hkg"
 
 [deploy]
   release_command = "npm run build"
-  strategy = "bluegreen"
+  # strategy = "bluegreen"
 
 [processes]
   app = "node app.js"
@@ -28,21 +28,21 @@ primary_region = "hkg"
     handlers = ["http"]
     port = 3000
   
-  [[services.http_checks]]
-    interval = 10000
-    grace_period = "10s"
+   [[services.http_checks]]
+    interval = 1000
+    grace_period = "5s"
     method = "get"
     path = "/health"
     protocol = "http"
-    timeout = 60000
-    tls_skip_verify = false
-    [services.http_checks.headers]
+  #  timeout = 60000
+  #  tls_skip_verify = false
+  #  [services.http_checks.headers]
 
-  [[services.tcp_checks]]
-    grace_period = "10s"
-    interval = "15s"
-    restart_limit = 0
-    timeout = "60s"
+  #[[services.tcp_checks]]
+  #  grace_period = "10s"
+  #  interval = "15s"
+  #  restart_limit = 0
+  #  timeout = "60s"
 
 
 [http_service]
