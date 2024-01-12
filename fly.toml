@@ -28,12 +28,12 @@ primary_region = "hkg"
     handlers = ["http"]
     port = 3000
   
-   [[services.http_checks]]
-    interval = 1000
-    grace_period = "5s"
-    method = "get"
-    path = "/health"
-    protocol = "http"
+   # [[services.http_checks]]
+    # interval = 1000
+    # grace_period = "5s"
+    # method = "get"
+    # path = "/health"
+  #  protocol = "http"
   #  timeout = 60000
   #  tls_skip_verify = false
   #  [services.http_checks.headers]
