@@ -34,7 +34,7 @@ primary_region = "hkg"
     method = "get"
     path = "/health"
     protocol = "http"
-    timeout = 200000
+    timeout = 60000
     tls_skip_verify = false
     [services.http_checks.headers]
 
@@ -42,7 +42,7 @@ primary_region = "hkg"
     grace_period = "10s"
     interval = "15s"
     restart_limit = 0
-    timeout = "155s"
+    timeout = "60s"
 
 
 [http_service]
