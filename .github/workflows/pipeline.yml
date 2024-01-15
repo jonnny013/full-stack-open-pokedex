@@ -40,7 +40,7 @@ jobs:
             FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
       
       - name: Test info
-        uses: rjstone/discord-webhook-notify@v1
+        uses: rjstone/discord-webhook-notify@v1.0.4
         if: success()
         with:
             severity: info
@@ -49,7 +49,7 @@ jobs:
             webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
             username: jonnny013
       - name: Test Failure
-        uses: rjstone/discord-webhook-notify@v1
+        uses: rjstone/discord-webhook-notify@v1.0.4
         if: failure()
         env:
           COMMIT_URL: ${{ toJson(github.event.commits.*.url) }}
