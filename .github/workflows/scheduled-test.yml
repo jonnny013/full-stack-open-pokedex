@@ -1,9 +1,8 @@
 name: Scheduled test
 
 on:
-  push:
-    branches:
-      - second-branch
+  schedule:
+    - cron: '10 * * * *'
 
 jobs:
   test_schedule:
