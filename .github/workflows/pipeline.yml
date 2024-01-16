@@ -41,7 +41,7 @@ jobs:
       
       - name: Test info
         uses: rjstone/discord-webhook-notify@v1.0.4
-        if: success()
+        if: ${{ github.event_name == 'push' && success() }}
         with:
             severity: info
             color: '#9cbb80'
@@ -50,7 +50,7 @@ jobs:
             username: jonnny013
       - name: Test Failure
         uses: rjstone/discord-webhook-notify@v1.0.4
-        if: failure()
+        if: ${{ github.event_name == 'push' && failure() }}
         env:
           COMMIT_URL: ${{ toJson(github.event.commits.*.url) }}
         with:

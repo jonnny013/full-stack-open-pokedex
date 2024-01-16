@@ -1,0 +1,15 @@
+name: Scheduled test
+
+on:
+  push:
+    branches:
+      - second-branch
+
+jobs:
+  test_schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Do health test
+        run: npm run health
+      
